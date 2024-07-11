@@ -1,35 +1,49 @@
 set(Headers
-    include/QtCmake.h
-)
+    "include/MainWindow.h"
+ "include/log4cplusImp.h"
+ "include/AppConfig.h" 
+ "include/AppHelper.h" 
+ "include/frmmessagebox.h"
+ "include/iconhelper.h" "include/mainControl.h")
 set(sourceCodes
     sources/main.cpp
-    sources/QtCmake.cpp
-
-)
+    "sources/MainWindow.cpp"
+ "sources/log4cplusImp.cpp" 
+ "sources/AppConfig.cpp" 
+ "sources/frmmessagebox.cpp" "sources/iconhelper.cpp" "sources/mainControl.cpp")
 set(UI 
-    forms/QtCmake.ui
+    forms/MainWindow.ui
+    forms/frmmessagebox.ui
 )
 set(CMAKE_AUTOUIC_SEARCH_PATHS
     forms 
 )
-
-add_executable(QtCmake  
+qt5_add_resources(QRC_FILES resources/MainWindow.qrc)
+add_executable(${PROJECT_NAME}  
 ${sourceCodes}
 ${UI}
 ${Headers}
+${QRC_FILES}
 )
+
 target_link_libraries(${PROJECT_NAME}
-    PUBLIC
-        Qt${QT_VERSION_MAJOR}::Core
-        Qt${QT_VERSION_MAJOR}::Gui
-        Qt${QT_VERSION_MAJOR}::Widgets
+    PRIVATE
+        materialUi
+        log4cplus::log4cplus
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE
    include
 )
-
-set_target_properties(${PROJECT_NAME}
+if(WIN32)
+    set_target_properties(${PROJECT_NAME}
     PROPERTIES
         WIN32_EXECUTABLE TRUE
+)
+endif()
+
+add_custom_command(
+    TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy "${SOURCE_CONFIG}" $<TARGET_FILE_DIR:${PROJECT_NAME}>
+    COMMENT "拷贝配置文件"
 )

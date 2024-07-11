@@ -1,28 +1,42 @@
-cmake_minimum_required(VERSION 3.28)
-project(QtCmake LANGUAGES CXX)
-
-set(CMAKE_CXX_STANDARD 11)
+cmake_minimum_required(VERSION 3.20)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(SOURCE_CONFIG "${CMAKE_CURRENT_SOURCE_DIR}/config.ini")
 if(WIN32)
-    set(CMAKE_PREFIX_PATH $ENV{QTDIR} ${CMAKE_PREFIX_PATH})
+    set(VCPKG_ROOT "D:/vside/vcpkg-2024.06.15/scripts/buildsystems/vcpkg.cmake" CACHE PATH "")
+    set(CMAKE_TOOLCHAIN_FILE ${VCPKG_ROOT})
+    set(CMAKE_PREFIX_PATH 
+    "D:/vside/vcpkg-2024.06.15/installed/x64-windows"
+    ${CMAKE_PREFIX_PATH})
 elseif(UNIX AND NOT APPLE)
-      set(CMAKE_PREFIX_PATH "/opt/Qt/5.14.2" ${CMAKE_PREFIX_PATH})
+    set(CMAKE_PREFIX_PATH 
+    "/opt/Qt5.14.2/5.14.2/gcc_64/lib/cmake/Qt5" ${CMAKE_PREFIX_PATH})
 endif()
+project(QtCmake LANGUAGES CXX)
 
-
-
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED 
+add_compile_options("/utf-8")
+find_package(Qt5 REQUIRED COMPONENTS Core)
+find_package(Qt5 REQUIRED 
     COMPONENTS
         Core
         Gui
         Widgets
 )
+find_package(log4cplus CONFIG REQUIRED)
+
+
+add_subdirectory(materialUi)
 add_subdirectory(src)
+
+
+
+
+
+
 
 
 

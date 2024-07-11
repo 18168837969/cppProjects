@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/message/cancel.png</file>
+        <file>images/message/cancel_hover.png</file>
+        <file>images/message/cancel_pressed.png</file>
+        <file>images/message/close.png</file>
+        <file>images/message/close_hover.png</file>
+        <file>images/message/close_pressed.png</file>
+        <file>images/message/error.png</file>
+        <file>images/message/info.png</file>
+        <file>images/message/ok.png</file>
+        <file>images/message/ok_hover.png</file>
+        <file>images/message/ok_pressed.png</file>
+        <file>images/message/question.png</file>
+        <file>images/switch/btncheckoff.png</file>
+        <file>images/switch/btncheckon.png</file>
+        <file>images/fontawesome-webfont.ttf</file>
+    </qresource>
+    <qresource prefix="/styles">
+        <file>style/defaultSheet.qss</file>
+    </qresource>
+</RCC>
