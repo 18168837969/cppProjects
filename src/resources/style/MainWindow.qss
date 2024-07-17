@@ -1,0 +1,28 @@
+MainWindow {
+    background-color: #000084;
+}
+
+QPushButton {   
+    font:32px bold;
+}  
+#labelStatus  {
+    background-color: #ffff00;
+    font:40px bold
+}
+#topStatusWidget{
+    background-color: #ff0000;
+}
+#labelTime{
+    background-color: #c0c0c0;
+    font:28px bold
+}
+
+
+
+
+#layoutWidget QLabel{
+    color: #000000;  
+    font-size:26px ;
+    font-weight:bold;
+}
+

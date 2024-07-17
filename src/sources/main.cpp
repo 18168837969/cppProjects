@@ -7,9 +7,12 @@
 int main(int argc, char *argv[])
 {
     Q_INIT_RESOURCE(resources);
+    QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication a(argc, argv);
-
-    a.setStyleSheet("QWidget { margin: 0px; padding: 0px; }");
+    QDesktopWidget* desktop = QApplication::desktop();
+    QRect screenGeometry = desktop->screenGeometry();
+    AppConfig::DeskHeight = screenGeometry.height();
+    AppConfig::DeskWidth = screenGeometry.width();
     if (!AppConfig::ReadConfig() || !MyLog->Init())
     {
         return -1;
@@ -21,7 +24,6 @@ int main(int argc, char *argv[])
         return 1;
     }
     QObject::connect(&a, &QApplication::aboutToQuit, [&]() {
-        delete MyLog;
         Q_CLEANUP_RESOURCE(resources);
         });
     MainWindow w;

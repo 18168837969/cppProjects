@@ -3,3 +3,5 @@ out
 Debug
 x64
 .vs
+CMakePresets.json
+CMakeUserPresets.json

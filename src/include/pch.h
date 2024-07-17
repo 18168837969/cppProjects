@@ -1,0 +1,12 @@
+#include "log4cplusImp.h"
+#include "AppConfig.h"
+#include "AppHelper.h"
+#include "UiHelper.h"
+#include "Singleton.h"
+#include "Global.h"
+#include <mutex>
+#include <qdebug.h>
+#include <qboxlayout.h>
+#include <qtmaterialcheckbox.h>
+#include <qtmaterialflatbutton.h>
+#include "qstackedwidget.h"

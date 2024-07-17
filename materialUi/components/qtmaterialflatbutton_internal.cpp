@@ -141,8 +141,8 @@ void QtMaterialFlatButtonStateMachine::setHaloScaleFactor(qreal factor)
 
 void QtMaterialFlatButtonStateMachine::startAnimations()
 {
-    m_haloAnimation->start();
-    start();
+    //m_haloAnimation->start();
+    //start();
 }
 
 void QtMaterialFlatButtonStateMachine::setupProperties()
@@ -175,6 +175,8 @@ void QtMaterialFlatButtonStateMachine::setupProperties()
 
 void QtMaterialFlatButtonStateMachine::updateCheckedStatus()
 {
+    //状态机关闭了
+    return;
     const bool checked = m_button->isChecked();
     if (m_wasChecked != checked) {
         m_wasChecked = checked;

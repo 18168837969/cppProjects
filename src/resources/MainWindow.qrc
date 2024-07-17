@@ -18,5 +18,6 @@
     </qresource>
     <qresource prefix="/styles">
         <file>style/defaultSheet.qss</file>
+        <file>style/MainWindow.qss</file>
     </qresource>
 </RCC>

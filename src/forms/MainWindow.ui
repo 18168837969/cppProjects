@@ -6,14 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>768</width>
-    <height>567</height>
+    <width>1096</width>
+    <height>779</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>0</number>
+   </property>
    <property name="leftMargin">
     <number>0</number>
    </property>
@@ -27,7 +30,10 @@
     <number>0</number>
    </property>
    <item>
-    <layout class="QHBoxLayout" name="layoutTop" stretch="3,5,1">
+    <layout class="QHBoxLayout" name="layoutTop" stretch="3,5,1,1">
+     <property name="spacing">
+      <number>0</number>
+     </property>
      <item>
       <widget class="QLabel" name="labelStatus">
        <property name="minimumSize">
@@ -37,21 +43,93 @@
         </size>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>手动</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="labelAlarm">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
+      <widget class="QWidget" name="topStatusWidget" native="true">
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>1</x>
+          <y>0</y>
+          <width>431</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout" columnstretch="3,1,1">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="lbStatusTop">
+           <property name="text">
+            <string>连接相机故障</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="0" column="2">
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lbStatusBottom">
+           <property name="text">
+            <string>设备短路</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="lbReg">
+           <property name="text">
+            <string>未授权</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="lbCam">
+           <property name="text">
+            <string>相机-断开连接！</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
      </item>
      <item>
@@ -63,14 +141,30 @@
         </size>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>17:08:08</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="topEmergencyBtnWidegt" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
       </widget>
      </item>
     </layout>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="1,8">
+     <property name="spacing">
+      <number>0</number>
+     </property>
      <item>
       <widget class="QFrame" name="frame">
        <property name="frameShape">

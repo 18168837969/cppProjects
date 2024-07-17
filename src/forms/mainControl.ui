@@ -6,39 +6,42 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>589</width>
-    <height>386</height>
+    <width>827</width>
+    <height>689</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>mainControl</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>50</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="50,500,50">
+   <property name="spacing">
+    <number>0</number>
    </property>
-   <property name="text">
-    <string>PushButton</string>
+   <property name="sizeConstraint">
+    <enum>QLayout::SetDefaultConstraint</enum>
    </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>50</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
+   <property name="leftMargin">
+    <number>0</number>
    </property>
-   <property name="text">
-    <string>PushButton</string>
+   <property name="topMargin">
+    <number>0</number>
    </property>
-  </widget>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="topWidget" native="true"/>
+   </item>
+   <item>
+    <widget class="QWidget" name="midWidget" native="true"/>
+   </item>
+   <item>
+    <widget class="QWidget" name="bottomWidget" native="true"/>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

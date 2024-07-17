@@ -11,7 +11,7 @@ QString AppConfig::SoftTitle = QStringLiteral("mes对接");
 QString AppConfig::SoftVersion = QStringLiteral("V1.0");
 QString AppConfig::CompanyName = QStringLiteral("连城凯科斯科技有限公司");
 int AppConfig::DeskWidth = 1920;
-int AppConfig::DeskHeigth = 1080;
+int AppConfig::DeskHeight = 1080;
 
 AppConfig::AppConfig()
 {

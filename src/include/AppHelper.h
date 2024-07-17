@@ -2,6 +2,8 @@
 #include <QtCore>
 #include <QApplication>
 #include <QDesktopWidget>
+#include <qlabel.h>
+#include <qcolor.h>
 #include "frmmessagebox.h"
 class AppHelper :public QObject
 {
@@ -23,22 +25,22 @@ public:
     }
 
     //设置皮肤样式
-    static bool setStyle(const QString& styleName)
+    static bool setStyleSheet(QWidget* target, const QString& styleName)
     {
-        QFile file(QString("%1").arg(styleName));
+        QFile file(styleName);
         if (!file.open(QFile::ReadOnly))
         {
             return false;
         }
-        QString css = QLatin1String(file.readAll());
-
+        QString qss = QLatin1String(file.readAll());
         file.close();
-
-        qApp->setStyleSheet(css);
-
+        target->setStyleSheet(qss);
         return true;
     }
-
+    static void setBackColor(QWidget* widget, QColor color)
+    {
+        widget->setStyleSheet(QString("background-color: %1;").arg(color.name()));
+    }
     //加载中文字符
     static void setChinese(const QString& fileName)
     {
@@ -120,7 +122,7 @@ public:
             QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
     }
 
-
+    
 
 
 };

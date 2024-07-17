@@ -4,7 +4,7 @@
 #include <QtGlobal>
 #include <QColor>
 #include "lib/qtmaterialtheme.h"
-
+#include <qmap.h>
 class QtMaterialFlatButton;
 class QtMaterialRippleOverlay;
 class QtMaterialFlatButtonStateMachine;
@@ -29,6 +29,7 @@ public:
     Material::OverlayStyle            overlayStyle;
     Qt::BGMode                        bgMode;
     Qt::Alignment                     textAlignment;
+    QColor                            checkedColor;
     QColor                            backgroundColor;
     QColor                            foregroundColor;
     QColor                            overlayColor;
@@ -41,6 +42,8 @@ public:
     bool                              useThemeColors;
     bool                              useFixedRippleRadius;
     bool                              haloVisible;
+    static  QMap<QString, QPushButton*> mutexChecked;
+    
 };
 
 #endif // QTMATERIALFLATBUTTON_P_H

@@ -1,16 +1,18 @@
 set(Headers
+    "include/Singleton.h"
     "include/MainWindow.h"
  "include/log4cplusImp.h"
  "include/AppConfig.h" 
  "include/AppHelper.h" 
  "include/frmmessagebox.h"
- "include/iconhelper.h" "include/mainControl.h")
+ "include/iconhelper.h"
+ "include/mainControl.h" "include/pch.h" "include/Global.h")
 set(sourceCodes
     sources/main.cpp
     "sources/MainWindow.cpp"
  "sources/log4cplusImp.cpp" 
  "sources/AppConfig.cpp" 
- "sources/frmmessagebox.cpp" "sources/iconhelper.cpp" "sources/mainControl.cpp")
+ "sources/frmmessagebox.cpp" "sources/iconhelper.cpp" "sources/mainControl.cpp" "sources/UiHelper.cpp")
 set(UI 
     forms/MainWindow.ui
     forms/frmmessagebox.ui
@@ -34,6 +36,7 @@ target_link_libraries(${PROJECT_NAME}
 
 target_include_directories(${PROJECT_NAME} PRIVATE
    include
+   ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}_autogen/include
 )
 if(WIN32)
     set_target_properties(${PROJECT_NAME}

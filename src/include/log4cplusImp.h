@@ -4,7 +4,7 @@
 #include <log4cplus/logger.h>
 #include <log4cplus/initializer.h>
 #include <log4cplus/hierarchy.h>
-#include <QScopedPointer>
+#include "Singleton.h"
 
 using namespace log4cplus;
 // 调试日志
@@ -50,7 +50,7 @@ using namespace log4cplus;
 #define DEFALT_IS_ASYNC	true                    // 默认异步
 #define DEFALT_MAX_DAYS_COUNT 30                // 默认最多保留日志天数
 
-class Log4CPlusPlusImp
+class Log4CPlusPlusImp:Singleton<Log4CPlusPlusImp>
 {
 public:
 	Log4CPlusPlusImp();
@@ -93,5 +93,5 @@ private:
 	std::wstring m_log_path;
 };
 
-extern Log4CPlusPlusImp*  MyLog;
+extern std::shared_ptr<Log4CPlusPlusImp>  MyLog;
 

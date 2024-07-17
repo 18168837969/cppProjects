@@ -47,6 +47,8 @@ auto filterOthersFunction = [=](const InternalLoggingEvent& event)
 	}
 	return DENY;
 	};
+
+
 Log4CPlusPlusImp::Log4CPlusPlusImp()
 {
 	m_pInitializer = std::make_unique<log4cplus::Initializer>();
@@ -64,7 +66,8 @@ Log4CPlusPlusImp::~Log4CPlusPlusImp()
 
 bool Log4CPlusPlusImp::Init()
 {
-	MyLog = new Log4CPlusPlusImp();
+
+	MyLog = GetInstance();
 	if (MyLog)
 	{
 		MyLog->AddFileAppender(1, (AppConfig::AppPath + "/logs").toStdWString().c_str(), L"infos.txt");
@@ -254,4 +257,4 @@ bool Log4CPlusPlusImp::AddFileAppenderPath(const std::wstring& path)
 	return m_fileAppenderPath.insert(path).second;
 }
 
-Log4CPlusPlusImp* MyLog;
+shared_ptr<Log4CPlusPlusImp> MyLog;
