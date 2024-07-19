@@ -1,0 +1,6 @@
+
+/* mainControl */
+/* 晶升 */
+QWidget #SeedLiftCtrlClass{
+    background-color: #c0c0c0;
+}

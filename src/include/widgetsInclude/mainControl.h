@@ -1,11 +1,11 @@
 #pragma once
 #include <QWidget>
-#include "ui_mainControl.h"
+#include "ui_maincontrol.h"
 #include "pch.h"
-namespace Ui {
-	class mainControl;
-}
-
+#include "VariablesWidget.h"
+#include "seedliftctrl.h"
+#include "ImageCtrl.h"
+#include "ImgLabel.h"
 class mainControl : public QWidget
 {
 	Q_OBJECT
@@ -62,9 +62,14 @@ public:
 
 	};
 public slots:
-	void ctrlBtnClicked(bool isChecked);
 
 private:
 	Ui::mainControl* ui;
 	QPushButton* _lastActiveBtn = nullptr;
+	QStackedWidget* midLeftSW;
+	QStackedWidget* midRightSW;
+	VariablesWidget* variablesWidget;
+	SeedLiftCtrl* seedLiftCtrl;
+	ImageCtrl* imageCtrl;
+	ImgLabel* imgLabel;
 };

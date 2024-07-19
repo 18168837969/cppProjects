@@ -1,10 +1,11 @@
 #pragma once
 
 #include <QtWidgets/QWidget>
-#include "ui_MainWindow.h"
 #include <qtmaterialtabs.h>
 #include "pch.h"
 #include "mainControl.h"
+#include "ui_MainWindow.h"
+
 class MainWindow : public QWidget
 {
 	Q_OBJECT

@@ -18,7 +18,14 @@ AppConfig::AppConfig()
 
 }
 void InitResources() {
-	//AppConfig::KayexDarkBlue = QColor("#ffebee");
+	QFile file(":/styles/style/App.qss");
+	if (file.open(QFile::ReadOnly))
+	{
+		QString qss = QLatin1String(file.readAll());
+		file.close();
+		qApp->setStyleSheet(qss);
+	}
+	
 }
 AppConfig::~AppConfig()
 {

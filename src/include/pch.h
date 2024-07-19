@@ -10,3 +10,8 @@
 #include <qtmaterialcheckbox.h>
 #include <qtmaterialflatbutton.h>
 #include "qstackedwidget.h"
+#include <QStyleOption>
+#include <QPainter>
+#include <QWidget>
+#include <qevent.h>
+#include <qlabel.h>

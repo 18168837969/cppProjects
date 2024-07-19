@@ -19,7 +19,6 @@ endif()
 project(QtCmake LANGUAGES CXX)
 
 add_compile_options("/utf-8")
-find_package(Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt5 REQUIRED 
     COMPONENTS
         Core
@@ -27,6 +26,9 @@ find_package(Qt5 REQUIRED
         Widgets
 )
 find_package(log4cplus CONFIG REQUIRED)
+#find_package(snap7 CONFIG REQUIRED)
+find_package(OpenCV CONFIG REQUIRED)
+
 
 
 add_subdirectory(materialUi)

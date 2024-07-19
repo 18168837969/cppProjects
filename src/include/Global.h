@@ -7,6 +7,7 @@ namespace GlobalColors {
 	const QColor KayexLightBlue("#4169E1");
 	const QColor KayexBackBlue("#000084");
 	const QColor KayexWhite("#FFFFFF");
+	const QColor KayexBlack("#000000");
 
 	const QColor KayexErrorRed("#ff0000");
 	const QColor KayexWarningYellow("#eeaa22");

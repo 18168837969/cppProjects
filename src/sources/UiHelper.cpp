@@ -1,7 +1,7 @@
 #include "UiHelper.h"
 UiHelper::UiHelper()
 {
-	qDebug() << "1";
+
 }
 
 UiHelper::~UiHelper()

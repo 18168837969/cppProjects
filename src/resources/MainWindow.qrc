@@ -17,7 +17,8 @@
         <file>images/fontawesome-webfont.ttf</file>
     </qresource>
     <qresource prefix="/styles">
-        <file>style/defaultSheet.qss</file>
         <file>style/MainWindow.qss</file>
+        <file>style/mainControl.qss</file>
+        <file>style/App.qss</file>
     </qresource>
 </RCC>

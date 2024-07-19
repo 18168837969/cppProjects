@@ -191,10 +191,11 @@ void QtMaterialFlatButtonStateMachine::updateCheckedStatus()
 bool QtMaterialFlatButtonStateMachine::eventFilter(QObject *watched,
                                                    QEvent  *event)
 {
+
     if (QEvent::FocusIn == event->type()) {
         QFocusEvent *focusEvent = static_cast<QFocusEvent *>(event);
         if (focusEvent && Qt::MouseFocusReason == focusEvent->reason()) {
-            postEvent(new QtMaterialStateTransitionEvent(FlatButtonPressedTransition));
+            //postEvent(new QtMaterialStateTransitionEvent(FlatButtonPressedTransition));
             return true;
         }
     }

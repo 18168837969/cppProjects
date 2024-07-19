@@ -72,14 +72,12 @@ void QtMaterialFlatButtonPrivate::init()
 	stateMachine->startAnimations();
 }
 
-/*!
- *  \class QtMaterialFlatButton
- */
+
 void QtMaterialFlatButton::RegisterMutex(const QString& className) {
 	Q_D(QtMaterialFlatButton);
 	if (!d->mutexChecked.keys().contains(className))
 	{
-		d->mutexChecked.insert(className, nullptr);
+		d->mutexChecked.insert(className, this);
 	}
 	this->setProperty("className", QVariant(className));
 	connect(this, &QPushButton::clicked, this, [&](bool ischeked) {

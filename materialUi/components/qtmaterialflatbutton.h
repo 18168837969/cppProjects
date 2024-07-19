@@ -33,6 +33,7 @@ public:
 	void setRole(Material::Role role);
 	Material::Role role() const;
 
+
 	void RegisterMutex(const QString& className);
 	void setCheckedColor(const QColor& color);
 	QColor checkedColor() const;
